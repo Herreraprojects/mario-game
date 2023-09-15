@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Super Mario Bros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div id="modal"  class="modal">
+        <div class="button-container">
+            <button onclick="toggleModal(event)" id="register-button">Register</button>
+            <button onclick="toggleModal(event)" id="login-button" class="not-active">Login</button>
+
+
+            <form onsubmit="register(event)" id="register-form">
+                <label for="register-email"></label>
+                <input type="email" id="register-email" value="demo@example.com" required>
+                <label for="register-password">Password</label>
+                <input id="register-password" placeholder="Password" required pattern=".{6,}">
+                <label for="register-username">Username</label>
+                <input id="register-username" value="User" required>
+                <br/>
+                <input type="submit" value="Sign Up">
+            </form>
+
+
+            <form onsubmit="login(event)" id="login-form" class="hidden">
+                <label for="login-email"></label>
+                <input type="email" id="login-email" value="demo@example.com" required>
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Password" required pattern=".{6,}">
+                
+                <br/>
+                <input type="submit" value="Sign In">
+            </form>
+    
+        </div>
+ 
+
+
+    </div>
+
+    <div class="info-container">
+        <button id="logout-button" class="hidden" onclick="logout()">Log out</button>
+        <button id="logout-button" class="hidden" onclick="logout()">Log out</button>
+
+        <h3 id="Username"></h3>
+        <h3 id="highscore-tag" class="hidden">Highscore: <span id="highscore"></span></h3>
+    </div>
+
+
+
+
+    <script src="https://kaboomjs.com/lib/0.5.0/kaboom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@11.0.0"></script>
+    <script src="game.js"></script>
+</body>
+</html>
